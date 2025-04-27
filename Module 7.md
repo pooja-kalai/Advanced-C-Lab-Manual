@@ -15,15 +15,42 @@ Else
 6.	Return 0
  
 Program:
+```
+#include <stdio.h>
+struct eligible {
+    int age;
+    char n[50];
+};
 
-//type your code here
+int main() {
+    int i, num;
+    printf("Enter the number of persons: ");
+    scanf("%d", &num);
+    struct eligible e[num];
+    for (i = 0; i < num; i++) {
+        printf("\nEnter details for person %d:\n", i + 1);
+        printf("Enter name: ");
+        scanf("%s", e[i].n);
+        printf("Enter age: ");
+        scanf("%d", &e[i].age);
+    }
+    for (i = 0; i < num; i++) {
+        printf("\nPerson %d:\n", i + 1);
+        printf("Name: %s\n", e[i].n);
+        printf("Age: %d\n", e[i].age);
+        
+        if (e[i].age <= 6) {
+            printf("Vaccine Eligibility: No\n");
+        } else {
+            printf("Vaccine Eligibility: Yes\n");
+        }
+    }
 
-
+    return 0;
+}
+```
 Output:
-
-//paste your output here
-
-
+![WhatsApp Image 2025-04-27 at 21 12 57_9a5de274](https://github.com/user-attachments/assets/d3abaa6b-ead0-40cf-a8c4-610f714adb84)
 Result:
 Thus, the program is verified successfully. 
 
@@ -43,20 +70,28 @@ Algorithm:
 7.	Return 0
  
 Program:
-
-//type your code here
-
-
-
-
+```
+#include <stdio.h>
+struct numbers {
+    int a;
+    int b;
+};
+struct numbers add(struct numbers n) {
+    struct numbers result;
+    result.a = n.a + n.b;  // Sum stored in 'a' member of result
+    return result;
+}
+int main() {
+    struct numbers n, res;
+    printf("Enter two numbers:\n");
+    scanf("%d %d", &n.a, &n.b);
+    res = add(n);
+    printf("Sum = %d\n", res.a);
+    return 0;
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
+![image](https://github.com/user-attachments/assets/3ba0b38d-6291-4c4b-8c3b-f3522e9b1999)
 Result:
 Thus, the program is verified successfully
 
@@ -85,26 +120,28 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
-
-//type your code here
-
-
-
-
+```
+#include <stdio.h>
+int main()
+{
+    char Fname[20];
+    scanf("%s",Fname);
+    FILE*prt=NULL;
+    prt=fopen("Ex. Hospital.java","w");
+    if(prt==NULL)
+    {
+        printf("file is not exist");
+    }
+    else{
+    printf("%s File Created Successfully\n",Fname);
+    printf("%s File Opened\n",Fname);
+}
+    fclose(prt);
+    printf("%s File Closed",Fname);
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/6470eae3-f3b8-41b6-9f87-b167fe5b6208)
 
 Result:
 Thus, the program is verified successfully
@@ -132,21 +169,33 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h>
+int main(){
+    char Fname[20];
+    int n,num;
+    scanf("%s",Fname);
+    scanf("%d",&n);
+    FILE *ptr;
+    ptr=fopen(Fname,"w");
+    
+    if(ptr==NULL){
+        printf("error");
+    }
+    printf("%s Opened\n",Fname);
+    for(int i=0;i<n;i++){
+        scanf("%d",&num);
+        fprintf(ptr,"%d",num);
+        
+    }
+    printf("Data added Successfully");
+    fclose(ptr);
+    return 0;
 
-//type your code here
-
-
-
-
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/79cffbe4-715d-4558-9178-710b8afbcaea)
 
 Result:
 Thus, the program is verified successfully
@@ -186,21 +235,41 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
-
-//type your code here
-
-
-
-
+```
+#include<stdio.h>
+#include<string.h>
+struct student{
+    int num;
+    char name[30];
+    char type[30];
+    char cou[20];
+    int fee;
+    struct date{
+        int dd;
+        int mm;
+        int yyyy;
+    }doj;
+}e1;
+int main()
+{
+    scanf("%d",&e1.num);
+    scanf("%s",e1.name);
+    scanf("%s",e1.type);
+    scanf("%s",e1.cou);
+    scanf("%d",&e1.fee);
+    scanf("%d",&e1.doj.dd);
+    scanf("%d",&e1.doj.mm);
+    scanf("%d",&e1.doj.yyyy);
+    printf("Admission Number : %d\n",e1.num);
+    printf("Student name : %s\n",e1.name);
+    printf("Course Type : %s\n",e1.cou);
+    printf("Date of admission (dd/mm/yyyy) : %d/%d/%d\n",e1.doj.dd,e1.doj.mm,e1.doj.yyyy);
+    printf("Course Name :%s\n",e1.type);
+    printf("Tution Fee:%d\n",e1.fee);
+    return 0;
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/05fc1ed9-5c36-40c6-8403-6fec8fb8456c)****
 Result:
 Thus, the program is verified successfully
