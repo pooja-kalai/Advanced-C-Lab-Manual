@@ -1,6 +1,4 @@
-
-
-EXP NO:21 C PROGRAM TO CREATE A FUNCTION TO FIND THE GREATEST NUMBER
+![image](https://github.com/user-attachments/assets/29ef722c-30d2-428c-9181-4e0456f87ab4)EXP NO:21 C PROGRAM TO CREATE A FUNCTION TO FIND THE GREATEST NUMBER
 Aim:
 To write a C program to create a function to find the greatest number
 
@@ -12,16 +10,37 @@ Algorithm:
 5.	Call the max_of_four function with the input integers and store the result in the greater variable
  
 Program:
-//type your code here
+```
+#include<stdio.h>
+int max_of_four(int a,int b,int c,int d)
+{
+if(a>b && a>c && a>d)
+{
+return a;
+}
+else if(b>a && b>c && b>d)
+{
+return b;
+}
+else if(c>a && c>b && c>d)
+{
+return c;
+}
+else
+{
+return d;
+}
+}
+int main()
+{
+int n1,n2,n3,n4,greater; scanf("%d%d%d%d",&n1,&n2,&n3,&n4); greater=max_of_four(n1,n2,n3,n4); printf("%d",greater);
+}
 
+```
 Output:
-//paste your output here
-
+![image](https://github.com/user-attachments/assets/4407381b-9a9e-4d8d-a85b-f03ccb8ee846)
 Result:
 Thus, the program  that create a function to find the greatest number is verified successfully.
-
-
- 
 EXP NO:22 C PROGRAM TO PRINT THE MAXIMUM VALUES FOR THE AND, OR AND  XOR COMPARISONS
 Aim:
 To write a C program to print the maximum values for the AND, OR and XOR comparisons
@@ -36,34 +55,73 @@ Algorithm:
 7.	Call the calculate_the_max function with input values.
  
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+int max_of_four(int a,int b,int c,int d)
+{
+if(a>b && a>c && a>d)
+{
+return a;
+}
+else if(b>a && b>c && b>d)
+{
+return b;
+}
+else if(c>a && c>b && c>d)
+{
+return c;
+}
+else
+{
+return d;
+}
+}
+int main()
+{
+int n1,n2,n3,n4,greater; scanf("%d%d%d%d",&n1,&n2,&n3,&n4); greater=max_of_four(n1,n2,n3,n4); printf("%d",greater);
+}
+```
 Output:
-//paste your output here
-
+![image](https://github.com/user-attachments/assets/2ab05d21-0e80-4350-bb22-4d6624ecfa9d)
 Result:
 Thus, the program to print the maximum values for the AND, OR and XOR comparisons
-is verified successfully.
-
-
- 
+is verified successfully. 
 EXP NO:23 C PROGRAM TO WRITE THE LOGIC FOR THE REQUESTS
 Aim:
 To write a C program to write the logic for the requests
-
 Algorithm:
 1.	Declare variables noshel and noque to store the number of shelves and the number of queries, respectively.
 2.	Use scanf to take two integers as input for the number of shelves and queries.
 3.	Declare a 2D array shelarr to represent shelves and books, and an array nobookarr to store the number of books on each shelf.
 4.	Declare variables k and c to keep track of the book index and the total number of books.
 5.	Use a for loop to iterate over the queries.
- 
 Program:
-//type your code here
+```
+#include<stdio.h> int main()
+{
+int noshel,noque; scanf("%d%d",&noshel,&noque); int shelarr[noshel][noshel];
+int nobookarr[noshel]; int k=0,c=0;
+for(int i=0;i<noque;i++)
+{
+int queno; scanf("%d",&queno); if(queno==1)
+{
+int shelno,nopage; scanf("%d%d",&shelno,&nopage); shelarr[shelno][k]=nopage; nobookarr[shelno]=c+=1;
+k=k+1;
+}
+else if(queno==2)
+{
+int pshelno,pbookno; scanf("%d%d",&pshelno,&pbookno); printf("%d",shelarr[pshelno][pbookno]);
+}
+else if(queno==3)
+{
+int ppshelno; scanf("%d",&ppshelno); printf("%d",nobookarr[ppshelno]);
+}
+}
+}
 
+```
 Output:
-//paste your output here
-
+![image](https://github.com/user-attachments/assets/df111b60-c75f-4266-a004-38bca4ce3b00)
 
 Result:
 Thus, the program to write the logic for the requests is verified successfully.
@@ -86,29 +144,26 @@ Algorithm:
 
 
 Program:
-//type your code here
-
+```
+#include<stdio.h> int main()
+{
+int n; scanf("%d",&n); int a[n];
+int sum=0;
+for(int i=0;i<n;i++)
+{
+scanf("%d",&a[i]); sum=sum+a[i];
+}
+printf("%d",sum);
+}
+```
 Output:
-//paste your output here
-
- 
-
-
+![image](https://github.com/user-attachments/assets/b45888c0-8191-4c75-931f-3142ac158b3a)
 Result:
-Thus, the program prints the sum of the integers in the array is verified successfully.
-
-
- 
+Thus, the program prints the sum of the integers in the array is verified successfully. 
 EXP NO 25: C PROGRAM TO COUNT THE NUMBER OF WORDS IN A      SENTENCE
-
-
-
 Aim:
-
 To write a C program that counts the number of words in a given sentence.
-
 Algorithm:
-
 1.	Input the sentence: Take a sentence from the user.
 2.	Initialize a counter variable: This will keep track of the number of words.
 3.	Process each character of the sentence:
@@ -116,18 +171,29 @@ o	Iterate through the sentence, checking each character.
 o	If a character is not a space, it may belong to a word. If it's the first non-space character after a space or at the start, increment the word count.
 4.	Handle spaces and punctuation: Skip over spaces, punctuation marks, and consider each word as a sequence of characters separated by spaces.
 5.	Display the result: After processing the sentence, output the total word count.
-
-
-
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100];
+    fgets(str,sizeof(str),stdin);
+    int len=sizeof(str);
+    int count=1;
+     for(int i=0;i<len-1;i++){
+         if(str[i]==' ')
+         count++;
+         
+     }
+     printf("Total number of words in the string is :%d",count);
+    return 0;
+}
+```
 Output:
-//paste your output here
-
+![image](https://github.com/user-attachments/assets/4a716702-c730-495f-8e11-01a0c8856ac7)
 
 
 Result:
-
 Thus, the program that counts the number of words in a given sentence is verified 
 successfully.
