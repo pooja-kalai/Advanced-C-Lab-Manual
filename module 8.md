@@ -15,21 +15,51 @@ Algorithm:
 4.	Exit the program.
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
+    switch(n) {
+        case 5:
+            printf("seventy one\n");
+            break;
+        case 6:
+            printf("seventy two\n");
+            break;
+        case 7:
+            printf("seventy three\n");
+            break;
+        case 8:
+            printf("seventy four\n");
+            break;
+        case 9:
+            printf("seventy five\n");
+            break;
+        case 10:
+            printf("seventy six\n");
+            break;
+        case 11:
+            printf("seventy seven\n");
+            break;
+        case 12:
+            printf("seventy eight\n");
+            break;
+        case 13:
+            printf("seventy nine\n");
+            break;
+        default:
+            printf("greater than 13\n");
+    }
 
-
-
+    return 0;
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
-
+![Screenshot 2025-04-29 184536](https://github.com/user-attachments/assets/e562c250-1a8a-4b78-b245-e5e1621de18a)
 
 Result:
 Thus, the program is verified successfully
@@ -46,21 +76,39 @@ Algorithm:
 6.	End
  
 Program:
+```
+#include <stdio.h>
+#include <string.h>
 
-//type your code here
+int main() {
+    char a[50];
+    int i, j, c;
 
+    printf("Enter a string of digits: ");
+    scanf("%s", a);
 
+    // Loop through digits 0 to 3
+    for(i = 0; i <= 3; i++) {
+        c = 0;
+        for(j = 0; j < strlen(a); j++) {
+            if(a[j] == i + '0') {
+                c++;
+            }
+        }
+        printf("%d ", c);
+    }
 
+    // For digits 4 to 9, just print 0
+    for(i = 4; i <= 9; i++) {
+        printf("0 ");
+    }
 
+    printf("\n");
+    return 0;
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
-
+![Screenshot 2025-04-29 184932](https://github.com/user-attachments/assets/cd74f2de-9ff0-4acf-9f30-e45bb4c64f9b)
 
 Result:
 Thus, the program is verified successfully
@@ -83,21 +131,78 @@ Free the memory allocated for each string in s Free the memory allocated for s
 7.	End
  
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-//type your code here
+// Function to swap characters
+void swap(char *x, char *y) {
+    char temp = *x;
+    *x = *y;
+    *y = temp;
+}
 
+// Function to reverse characters in a string
+void reverse(char *str, int start, int end) {
+    while (start < end) {
+        swap(&str[start], &str[end]);
+        start++;
+        end--;
+    }
+}
 
+// Function to implement next permutation
+int next_permutation(char *str, int n) {
+    int i = n - 2;
+    while (i >= 0 && str[i] >= str[i + 1]) {
+        i--;
+    }
 
+    if (i < 0) return 0;
 
+    int j = n - 1;
+    while (str[j] <= str[i]) {
+        j--;
+    }
+
+    swap(&str[i], &str[j]);
+    reverse(str, i + 1, n - 1);
+    return 1;
+}
+
+int cmpfunc(const void *a, const void *b) {
+    return (*(char *)a - *(char *)b);
+}
+
+int main() {
+    char *s = (char *)malloc(100 * sizeof(char));
+    if (s == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+    printf("Enter the string: ");
+    scanf("%s", s);
+
+    int n = strlen(s);
+
+    // Sort the string in lexicographical order
+    qsort(s, n, sizeof(char), cmpfunc);
+
+    // Print all permutations
+    do {
+        printf("%s\n", s);
+    } while (next_permutation(s, n));
+
+    // Free allocated memory
+    free(s);
+
+    return 0;
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
-
+![Screenshot 2025-04-29 185222](https://github.com/user-attachments/assets/70e34902-156e-43ac-a885-717ed10920f8)
 
 Result:
 Thus, the program is verified successfully
@@ -116,22 +221,32 @@ Algorithm:
 7.	End
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    int n, i, j;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
 
+    int len = n * 2 - 1;
+    int min;
 
+    for (i = 0; i < len; i++) {
+        for (j = 0; j < len; j++) {
+            min = i < j ? i : j;
+            min = min < len - i - 1 ? min : len - i - 1;
+            min = min < len - j - 1 ? min : len - j - 1;
+            printf("%d ", n - min);
+        }
+        printf("\n");
+    }
 
-
+    return 0;
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
-
-
+![Screenshot 2025-04-29 185547](https://github.com/user-attachments/assets/8e8a75d2-d0b0-44d6-930b-6f78992c3ab0)
 Result:
 Thus, the program is verified successfully
 
@@ -155,22 +270,26 @@ o	Call the square() function and display the result.
 5.	End.
 
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+// Function with no arguments and with return type
+int square() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    return num * num;
+}
 
-
-
-
+int main() {
+    int result;
+    result = square(); // Function call
+    printf("The square of the number is: %d\n", result);
+    return 0;
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
-
-
+![Screenshot 2025-04-29 185755](https://github.com/user-attachments/assets/c857b9cb-9422-4624-b5ce-f4f35e51d9f8)
 Result:
 Thus, the program is verified successfully
 
