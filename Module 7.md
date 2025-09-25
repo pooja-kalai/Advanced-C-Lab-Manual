@@ -124,6 +124,7 @@ int main() {
 Output:
 <img width="883" height="591" alt="image" src="https://github.com/user-attachments/assets/843d247d-62a6-4ba6-b2c9-966223c9400f" />
 <img width="853" height="462" alt="image" src="https://github.com/user-attachments/assets/205761d5-553a-4e4d-9348-5c0c6546a999" />
+
 Result:
 Thus, the program is verified successfully
  
@@ -178,6 +179,7 @@ int main()
     printf("Data added Successfully");
     fclose(fp);
 }
+```
 Output:
 <img width="837" height="467" alt="image" src="https://github.com/user-attachments/assets/ea1f4d3f-cf3a-4a42-8113-06589f507d72" />
 Result:
